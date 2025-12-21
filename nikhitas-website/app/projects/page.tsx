@@ -18,31 +18,38 @@ export default function Projects() {
         <h2 className="text-3xl italic mb-8" style={{ color: '#4a6fa5' }}>
           💻 Computer Science
         </h2>
-        <div className="grid grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-2 gap-8 mb-16">
           
           <div className="bg-white/50 rounded-3xl p-8">
-  <h3 className="text-2xl italic mb-2" style={{ color: '#4a6fa5' }}>Steel Advisory</h3>
-  <p className="text-sm mb-4" style={{ color: '#4a6fa5' }}>Month Year</p>
-  <p className="mb-4" style={{ color: '#6b7280' }}>
-    Created a steel procurement optimization tool that combines ARIMAX time-series forecasting with Monte Carlo simulation. The model factors in economic indicators, production methods (blast furnace vs. electric arc), shipping emissions, and regional grid cleanliness to recommend cost-effective, sustainable suppliers. Built with FastAPI and Next.js.
-  </p>
-  <a 
-    href="https://lnkd.in/gtSchADj" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center gap-2 px-5 py-2 rounded-full hover:opacity-80 transition-opacity"
-    style={{ backgroundColor: '#d0dcea', color: '#4a6fa5' }}
-  >
-    Check it out <span>→</span>
-  </a>
-</div>
-
-          <div className="bg-white/50 rounded-3xl p-8 flex items-center justify-center">
-            <p className="text-2xl italic" style={{ color: '#4a6fa5' }}>Coming Soon</p>
+            <h3 className="text-2xl italic mb-4" style={{ color: '#4a6fa5' }}>Steel Advisory</h3>
+            <p className="mb-4" style={{ color: '#6b7280' }}>
+              Created a steel procurement optimization tool that combines ARIMAX time-series forecasting with Monte Carlo simulation. The model factors in economic indicators, production methods (blast furnace vs. electric arc), shipping emissions, and regional grid cleanliness to recommend cost-effective, sustainable suppliers. Built with FastAPI and Next.js.
+            </p>
+            <a 
+              href="https://lnkd.in/gtSchADj" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full hover:opacity-80 transition-opacity"
+              style={{ backgroundColor: '#d0dcea', color: '#4a6fa5' }}
+            >
+              Check it out <span>→</span>
+            </a>
           </div>
 
-          <div className="bg-white/50 rounded-3xl p-8 flex items-center justify-center">
-            <p className="text-2xl italic" style={{ color: '#4a6fa5' }}>Coming Soon</p>
+          <div className="bg-white/50 rounded-3xl p-8">
+            <h3 className="text-2xl italic mb-4" style={{ color: '#4a6fa5' }}>Fashion Sustainability Calculator</h3>
+            <p className="mb-4" style={{ color: '#6b7280' }}>
+              Built a sustainability calculator that estimates the carbon emissions and water usage of clothing items. Users can input a clothing item and brand to see the environmental impact of their purchase, helping make more informed fashion choices.
+            </p>
+            <a 
+              href="https://sustainfashion.vercel.app/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full hover:opacity-80 transition-opacity"
+              style={{ backgroundColor: '#d0dcea', color: '#4a6fa5' }}
+            >
+              Check it out <span>→</span>
+            </a>
           </div>
 
         </div>
@@ -62,8 +69,7 @@ export default function Projects() {
               />
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl italic mb-2" style={{ color: '#4a6fa5' }}>Reset</h3>
-              <p className="text-sm mb-4" style={{ color: '#4a6fa5' }}>Sep 2024 - Present</p>
+              <h3 className="text-2xl italic mb-4" style={{ color: '#4a6fa5' }}>Reset</h3>
               <p style={{ color: '#6b7280' }}>
                 Conducted research on material circularity standards for RESET, a global building sustainability certification. Analyzed partnership opportunities and policy gaps to help inform the organization's strategy for entering the US market.
               </p>
@@ -74,15 +80,14 @@ export default function Projects() {
             <div className="flex-shrink-0">
               <img 
                 src="/blusink.png" 
-                alt="BlueSink"
+                alt="Blusink"
                 className="w-24 h-24 object-contain rounded-2xl"
               />
             </div>
             <div className="flex-1">
-              <h3 className="text-2xl italic mb-2" style={{ color: '#4a6fa5' }}>BlueSink</h3>
-              <p className="text-sm mb-4" style={{ color: '#4a6fa5' }}>Sep 2024 - Present</p>
+              <h3 className="text-2xl italic mb-4" style={{ color: '#4a6fa5' }}>Blusink</h3>
               <p style={{ color: '#6b7280' }}>
-                Developing methods to quantify economic benefits of marine ecosystem services, creating valuation frameworks for future investment and pricing strategy for BlueSink, a carbon sequestration technology company.
+                Developing methods to quantify economic benefits of marine ecosystem services, creating valuation frameworks for future investment and pricing strategy for Blusink, a carbon sequestration technology company.
               </p>
             </div>
           </div>
