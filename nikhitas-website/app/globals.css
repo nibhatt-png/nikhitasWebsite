@@ -1,37 +1,255 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
-
 @import "tailwindcss";
 
-.font-script {
-  font-family: 'Dancing Script', cursive;
-}
-
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --canvas: #e7ebdd;
+  --canvas-2: #eef1e6;
+  --canvas-3: #dde2cf;
+  --ink: #233529;
+  --ink-soft: #506156;
+  --ink-faint: #87938a;
+  --line: rgba(35, 53, 41, 0.16);
+
+  --paper: #f4f3e7;
+  --paper-warm: #e6e6d2;
+  --paper-ink: #213227;
+  --paper-ink-soft: #4d5a50;
+
+  --sand: #d2ab99;
+  --sand-deep: #b88a72;
+  --ash: #bdbea9;
+  --ash-deep: #9a9b82;
+  --mteal: #8db38b;
+  --mteal-deep: #6d9a6b;
+  --jungle: #56876d;
+  --jungle-deep: #3f6a54;
+  --turf: #04724d;
+  --turf-deep: #03583c;
+
+  --n-butter: #f0e6c8;
+  --n-sky: #dde6e0;
+  --n-sage: #d7e0c9;
+  --n-rose: #e8d3c7;
+  --n-peach: #ecdcc2;
+  --n-terra: #ddc9b8;
+
+  --shadow-paper: 0 18px 40px -24px rgba(35, 53, 41, 0.5);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--canvas);
+  --color-foreground: var(--ink);
+  --font-sans: var(--font-inter), sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--canvas);
+  background-image: radial-gradient(rgba(35, 53, 41, 0.07) 1px, transparent 1.5px);
+  background-size: 23px 23px;
+  color: var(--ink);
+  font-family: var(--font-inter), sans-serif;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  opacity: 0.05;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.font-display {
+  font-family: var(--font-figtree), sans-serif;
+}
+
+.font-script {
+  font-family: var(--font-shantell), cursive;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* ---------- highlight slab ---------- */
+.highlight-slab {
+  background: var(--tint, var(--n-sage));
+  padding: 0.05em 0.35em;
+  border-radius: 0.28em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 700;
+  color: var(--paper);
+  background: var(--jungle);
+  padding: 0.8em 1.6em;
+  border-radius: 14px;
+  box-shadow: 0 3px 0 var(--jungle-deep), 0 12px 20px -14px rgba(35, 53, 41, 0.6);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 var(--jungle-deep), 0 6px 12px -10px rgba(35, 53, 41, 0.5);
+}
+
+.btn.blue {
+  background: var(--turf);
+  box-shadow: 0 3px 0 var(--turf-deep), 0 12px 20px -14px rgba(35, 53, 41, 0.6);
+}
+.btn.blue:hover {
+  box-shadow: 0 1px 0 var(--turf-deep), 0 6px 12px -10px rgba(35, 53, 41, 0.5);
+}
+
+.btn.sage {
+  background: var(--jungle-deep);
+  box-shadow: 0 3px 0 #2c4936, 0 12px 20px -14px rgba(35, 53, 41, 0.6);
+}
+.btn.sage:hover {
+  box-shadow: 0 1px 0 #2c4936, 0 6px 12px -10px rgba(35, 53, 41, 0.5);
+}
+
+.btn.rose {
+  background: var(--sand);
+  color: var(--ink);
+  box-shadow: 0 3px 0 var(--sand-deep), 0 12px 20px -14px rgba(35, 53, 41, 0.4);
+}
+.btn.rose:hover {
+  box-shadow: 0 1px 0 var(--sand-deep), 0 6px 12px -10px rgba(35, 53, 41, 0.3);
+}
+
+.btn.moss {
+  background: var(--ash-deep);
+  color: var(--ink);
+  box-shadow: 0 3px 0 #7d7e69, 0 12px 20px -14px rgba(35, 53, 41, 0.4);
+}
+.btn.moss:hover {
+  box-shadow: 0 1px 0 #7d7e69, 0 6px 12px -10px rgba(35, 53, 41, 0.3);
+}
+
+/* ---------- nav links ---------- */
+.nav-link {
+  position: relative;
+  font-family: var(--font-figtree), sans-serif;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-decoration: none;
+  padding-bottom: 3px;
+  transition: color 0.2s ease;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 2px;
+  width: 100%;
+  background: var(--jungle);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+.nav-link:hover {
+  color: var(--ink);
+}
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+.nav-link.active {
+  color: var(--ink);
+  font-weight: 800;
+}
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ---------- cards / shadows ---------- */
+.shadow-paper {
+  box-shadow: var(--shadow-paper);
+}
+
+.bg-note-butter { background: var(--n-butter); }
+.bg-note-sky { background: var(--n-sky); }
+.bg-note-sage { background: var(--n-sage); }
+.bg-note-rose { background: var(--n-rose); }
+.bg-note-peach { background: var(--n-peach); }
+.bg-note-terra { background: var(--n-terra); }
+
+.tape {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.55);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.polaroid {
+  background: var(--paper);
+  padding: 12px 12px 0 12px;
+  box-shadow: var(--shadow-paper);
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 1.5px dashed rgba(35, 53, 41, 0.35);
+  border-radius: 10px;
+  color: var(--ink-faint);
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.corner-fold {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 22px;
+  height: 22px;
+  background: rgba(35, 53, 41, 0.12);
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+
+/* ---------- connect / CTA band ---------- */
+.cta-band {
+  position: relative;
+  background: var(--turf);
+  color: var(--paper);
+  overflow: hidden;
+}
+.cta-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1.5px);
+  background-size: 23px 23px;
+  pointer-events: none;
+}
+
+/* ---------- footer ---------- */
+.footer-link {
+  color: var(--ink-faint);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+.footer-link:hover {
+  color: var(--jungle);
 }

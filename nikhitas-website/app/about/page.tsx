@@ -1,112 +1,142 @@
+import Nav from "../components/Nav";
+import Footer from "../components/Footer";
+
+const cards = [
+  {
+    title: "musician",
+    text: "I love playing piano in my band, ChemAfterChem.",
+    bg: "bg-note-terra",
+    rotate: "rotate-1",
+    tape: "right-8 rotate-3",
+    photo: "/about-music2.jpg",
+  },
+  {
+    title: "outdoor explorer",
+    text: "I love to go on walks and hikes! I'm also currently training for a triathlon.",
+    bg: "bg-note-peach",
+    rotate: "rotate-1",
+    tape: "left-8 -rotate-3",
+    photo: "/about-outdoors.jpg",
+  },
+  {
+    title: "cat lover",
+    text: "I spend lots of time with my cats, Mick and Starburst.",
+    bg: "bg-note-butter",
+    rotate: "-rotate-1",
+    tape: "right-8 rotate-4",
+    photo: "/about-cats.jpg",
+  },
+  {
+    title: "concert chaser",
+    text: "Most recently I've been to Noah Kahan!",
+    bg: "bg-note-sky",
+    rotate: "rotate-1",
+    tape: "left-8 -rotate-2",
+    photo: "/about-concert.jpg",
+  },
+  {
+    title: "traveler",
+    text: "I love to visit new places. Most recently I visited New York!",
+    bg: "bg-note-rose",
+    rotate: "-rotate-1",
+    tape: "right-8 rotate-2",
+    photo: "/about-travel.jpg",
+  },
+  {
+    title: "chef",
+    text: "Cooking is one of my favorite things to do!",
+    bg: "bg-note-butter",
+    rotate: "rotate-1",
+    tape: "left-8 -rotate-2",
+    photo: "/about-cooking.jpg",
+  },
+  {
+    title: "matcha enthusiast",
+    text: "I'm always hunting for the best matcha spot - or making matcha at home!",
+    bg: "bg-note-sage",
+    rotate: "-rotate-1",
+    tape: "left-8 -rotate-4",
+    photo: "/about-matcha.jpg",
+  },
+  {
+    title: "south african",
+    text: "My family is from South Africa and I love visiting.",
+    bg: "bg-note-sage",
+    rotate: "-rotate-1",
+    tape: "right-8 rotate-3",
+    photo: "/about-southafrica.jpg",
+  },
+  {
+    title: "advocate",
+    text: "I am deeply passionate about advocacy and pushing for justice in my community.",
+    bg: "bg-note-peach",
+    rotate: "rotate-1",
+    tape: "left-8 -rotate-4",
+    photo: "/about-advocate.jpg",
+  },
+];
+
 export default function About() {
   return (
-    <div className="min-h-screen bg-[#FDF8F5] relative">
-      {/* Top Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center bg-[#FDF8F5]/80 backdrop-blur-sm">
-        <a href="/" className="flex gap-1 items-center hover:opacity-70 transition-opacity">
-          <div className="w-2 h-2 bg-[#355070] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#6D597A] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#B56576] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#E56B6F] rounded-full"></div>
-          <div className="w-2 h-2 bg-[#EAAC8B] rounded-full"></div>
-          <span className="ml-2 text-sm font-medium text-[#355070]">Home</span>
-        </a>
-        <div className="flex gap-8">
-          <a href="/about" className="text-sm text-[#E56B6F] font-medium underline underline-offset-4">
-            About
-          </a>
-          <a href="/projects" className="text-sm text-[#355070] hover:text-[#6D597A] transition-colors font-medium">
-            Projects
-          </a>
-          <a href="/research" className="text-sm text-[#355070] hover:text-[#B56576] transition-colors font-medium">
-            Research
-          </a>
-        </div>
-      </nav>
+    <div className="min-h-screen relative">
+      <Nav current="about" />
 
-      <div className="pt-32 pb-20 px-8 max-w-[1400px] mx-auto">
+      <div className="pt-20 pb-24 px-8 max-w-[1400px] mx-auto">
         {/* Page Title */}
-        <h1 className="text-7xl font-bold text-[#355070] mb-16">About Me</h1>
+        <h1
+          className="highlight-slab inline-block font-display font-black text-6xl text-[var(--ink)] mb-16"
+          style={{ "--tint": "var(--n-sage)" } as React.CSSProperties}
+        >
+          About Me
+        </h1>
 
         {/* Grid Layout */}
-        <div className="grid md:grid-cols-2 gap-8 mb-8">
-          {/* I love to code */}
-          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-[4px_4px_0px_0px_rgba(53,80,112,0.3)]">
-            <h3 className="text-xl font-bold text-[#355070] mb-4 flex items-center gap-2">
-              <span>💻</span> I love to code...
-            </h3>
-            <p className="text-[#355070] leading-relaxed">
-              I love to apply code to scientific issues, including modeling the spread of diseases and exploring the role of AI in healthcare. Right now, I'm developing a course recommendation platform to help students navigate class selection.
-            </p>
-          </div>
-
-          {/* I'm a policy nerd */}
-          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-[4px_4px_0px_0px_rgba(109,89,122,0.3)]">
-            <h3 className="text-xl font-bold text-[#355070] mb-4 flex items-center gap-2">
-              <span>📊</span> I'm a policy nerd...
-            </h3>
-            <p className="text-[#355070] leading-relaxed">
-              I am passionate about using science to inform policy, specifically in issue areas like climate, technology, and healthcare. In the past I've written AI policy recommendations for the Maryland State Legislature, lobbied for climate regulation on Capitol Hill, and worked on making my school system more inclusive.
-            </p>
-          </div>
-
-          {/* I care deeply about sustainability */}
-          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-[4px_4px_0px_0px_rgba(181,101,118,0.3)]">
-            <h3 className="text-xl font-bold text-[#355070] mb-4 flex items-center gap-2">
-              <span>🌱</span> I care deeply about sustainability...
-            </h3>
-            <p className="text-[#355070] leading-relaxed">
-              I work as a consultant at Robert's Environmental Center, where I help clients navigate sustainability challenges and develop actionable strategies. I'm also working in the LILAQ Lab with Professor Medero at Harvey Mudd, creating data visualizations for air quality data to make environmental information more accessible and actionable for communities.
-            </p>
-          </div>
-
-          {/* I'm an avid musician */}
-          <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-[4px_4px_0px_0px_rgba(229,107,111,0.3)]">
-            <h3 className="text-xl font-bold text-[#355070] mb-4 flex items-center gap-2">
-              <span>🎵</span> I'm an avid musician...
-            </h3>
-            <p className="text-[#355070] leading-relaxed">
-              I play piano in my band, ChemAfterChem. I love folk music and artists like Noah Kahan, Zach Bryan, and Del Water Gap. When I'm not playing music or going to concerts, you can find me hunting for the best matcha in town or going on hikes.
-            </p>
-          </div>
-        </div>
-
-        {/* Contact Me */}
-        <div className="bg-white p-8 rounded-2xl border border-gray-200 shadow-[4px_4px_0px_0px_rgba(234,172,139,0.3)]">
-          <h3 className="text-xl font-bold text-[#355070] mb-6 flex items-center gap-2">
-            <span>🔗</span> Contact Me
-          </h3>
-          <div className="flex gap-4">
-            <a 
-              href="mailto:nibhatt@g.hmc.edu"
-              className="px-6 py-3 bg-[#E56B6F] text-white font-medium rounded-full hover:opacity-80 transition-opacity"
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-14 mb-8">
+          {cards.map((card, i) => (
+            <div
+              key={i}
+              className={`relative ${card.rotate} ${card.bg} p-5 rounded-xl shadow-paper overflow-hidden`}
             >
-              Email
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/nikhita-b-aba947218/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#6D597A] text-white font-medium rounded-full hover:opacity-80 transition-opacity"
-            >
-              LinkedIn
-            </a>
-            <a 
-              href="https://github.com/nibhatt-png"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-6 py-3 bg-[#355070] text-white font-medium rounded-full hover:opacity-80 transition-opacity"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
+              <div className={`tape w-20 h-6 -top-3 ${card.tape}`}></div>
 
-        {/* Decorative element */}
-        <div className="flex items-center gap-4 mt-16">
-          <div className="h-[2px] flex-1 bg-gradient-to-r from-[#355070] via-[#6D597A] via-[#B56576] via-[#E56B6F] to-[#EAAC8B]"></div>
+              {card.photo ? (
+                <div className="relative rotate-1 mb-5">
+                  <div className="polaroid !p-2">
+                    <img
+                      src={card.photo}
+                      alt={card.title}
+                      className="w-full aspect-square object-cover"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="photo-placeholder w-full aspect-square mb-5">
+                  photo
+                  <br />
+                  coming soon
+                </div>
+              )}
+
+              {card.title ? (
+                <h3 className="font-display font-bold text-xl text-[var(--paper-ink)] mb-2">
+                  {card.title}
+                </h3>
+              ) : (
+                <h3 className="font-display font-bold text-xl text-[var(--paper-ink)]/40 mb-2 italic">
+                  add a title...
+                </h3>
+              )}
+              <p className="text-[var(--paper-ink-soft)] italic text-sm leading-relaxed">
+                {card.text || "add a sentence here..."}
+              </p>
+
+              <div className="corner-fold"></div>
+            </div>
+          ))}
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
