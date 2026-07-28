@@ -31,8 +31,8 @@ const roles = [
     role: "POLICY CHAIR",
     color: "var(--ash-deep)",
     initials: "SCAC",
-    logo: null,
-    desc: null,
+    logo: "/logo-scac.png",
+    desc: "I led the policy committee of the SCAC where I worked on pushing for sustainable policy in Montgomery County. In particular, I led a $75,000 grant program for students who wanted to create environmental projects.",
   },
 ];
 
