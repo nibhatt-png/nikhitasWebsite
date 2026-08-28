@@ -1,19 +1,19 @@
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import ProjectGrid from "../components/ProjectGrid";
-import { projects } from "../data/projects";
+import Timeline from "../components/Timeline";
+import { experienceItems } from "../data/experience";
 
-export default function Projects() {
+export default function Experience() {
   return (
     <div className="min-h-screen relative">
-      <Nav current="projects" />
+      <Nav current="experience" />
 
       <div className="relative pt-20 pb-24 px-8 max-w-[1400px] mx-auto">
         <h1 className="font-display font-black text-5xl md:text-6xl leading-[1.05] tracking-tight text-[var(--ink)] mb-14">
-          Projects
+          Experience
         </h1>
 
-        <ProjectGrid projects={projects} />
+        <Timeline items={experienceItems} />
       </div>
 
       <Footer />

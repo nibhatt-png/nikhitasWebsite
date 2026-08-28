@@ -1,6 +1,10 @@
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import ConnectBand from "./components/ConnectBand";
+import Timeline from "./components/Timeline";
+import ProjectGrid from "./components/ProjectGrid";
+import Reveal from "./components/Reveal";
+import { experienceItems } from "./data/experience";
+import { projects } from "./data/projects";
 
 export default function Home() {
   return (
@@ -11,7 +15,15 @@ export default function Home() {
       <section id="home" className="pt-20 px-8 max-w-[1400px] mx-auto pb-24">
         {/* Name Section */}
         <div className="relative mb-16">
-          <p className="font-script text-4xl text-[var(--jungle)] mb-2 -rotate-3 inline-block">
+          <div
+            className="absolute -top-24 -left-16 w-[420px] h-[420px] rounded-full pointer-events-none -z-10"
+            style={{
+              background: "radial-gradient(circle, var(--n-lavender) 0%, transparent 70%)",
+              opacity: 0.6,
+              filter: "blur(10px)",
+            }}
+          />
+          <p className="font-script text-4xl text-[var(--lavender-deep)] mb-2 -rotate-3 inline-block">
             hello, I&apos;m
           </p>
           <h1 className="font-display text-[100px] leading-[0.95] tracking-tight text-[var(--ink)] font-black">
@@ -45,7 +57,7 @@ export default function Home() {
             </p>
 
             {/* Item 1 - Education */}
-            <div className="py-6">
+            <Reveal delay={0} className="py-6">
               <p className="text-xl text-[var(--ink)] mb-4">
                 Studying{" "}
                 <span className="highlight-slab font-bold" style={{ "--tint": "var(--n-sage)" } as React.CSSProperties}>
@@ -56,10 +68,24 @@ export default function Home() {
               <a href="/about" className="btn">
                 get to know me →
               </a>
-            </div>
+            </Reveal>
 
-            {/* Item 2 - Projects */}
-            <div className="py-6">
+            {/* Item 2 - Experience */}
+            <Reveal delay={100} className="py-6">
+              <p className="text-xl text-[var(--ink)] mb-4">
+                Gaining{" "}
+                <span className="highlight-slab font-bold" style={{ "--tint": "var(--n-lavender)" } as React.CSSProperties}>
+                  experience through internships, research, and consulting
+                </span>
+                .
+              </p>
+              <a href="/#experience" className="btn lavender">
+                see my experience →
+              </a>
+            </Reveal>
+
+            {/* Item 3 - Projects */}
+            <Reveal delay={200} className="py-6">
               <p className="text-xl text-[var(--ink)] mb-4">
                 Building{" "}
                 <span className="highlight-slab font-bold" style={{ "--tint": "var(--n-peach)" } as React.CSSProperties}>
@@ -67,27 +93,13 @@ export default function Home() {
                 </span>
                 .
               </p>
-              <a href="/projects" className="btn blue">
+              <a href="/#projects" className="btn blue">
                 see my projects →
               </a>
-            </div>
-
-            {/* Item 3 - Research */}
-            <div className="py-6">
-              <p className="text-xl text-[var(--ink)] mb-4">
-                Chasing{" "}
-                <span className="highlight-slab font-bold" style={{ "--tint": "var(--n-rose)" } as React.CSSProperties}>
-                  questions through research
-                </span>
-                .
-              </p>
-              <a href="/research" className="btn rose">
-                read my work →
-              </a>
-            </div>
+            </Reveal>
 
             {/* Item 4 - Leadership */}
-            <div className="py-6">
+            <Reveal delay={300} className="py-6">
               <p className="text-xl text-[var(--ink)] mb-4">
                 Working on{" "}
                 <span className="highlight-slab font-bold" style={{ "--tint": "var(--n-terra)" } as React.CSSProperties}>
@@ -98,12 +110,37 @@ export default function Home() {
               <a href="/leadership" className="btn moss">
                 see my leadership →
               </a>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
-      <ConnectBand />
+      {/* ==================== EXPERIENCE ==================== */}
+      <section id="experience" className="scroll-mt-24 px-8 max-w-[1400px] mx-auto pb-24">
+        <Reveal>
+          <div className="section-eyebrow mb-8">
+            <h2 className="font-display font-black text-4xl md:text-5xl text-[var(--ink)] tracking-tight whitespace-nowrap">
+              Experience
+            </h2>
+            <span className="rule" />
+          </div>
+        </Reveal>
+        <Timeline items={experienceItems} />
+      </section>
+
+      {/* ==================== PROJECTS ==================== */}
+      <section id="projects" className="scroll-mt-24 px-8 max-w-[1400px] mx-auto pb-24">
+        <Reveal>
+          <div className="section-eyebrow mb-8">
+            <h2 className="font-display font-black text-4xl md:text-5xl text-[var(--ink)] tracking-tight whitespace-nowrap">
+              Projects
+            </h2>
+            <span className="rule" />
+          </div>
+        </Reveal>
+        <ProjectGrid projects={projects} />
+      </section>
+
       <Footer />
     </div>
   );

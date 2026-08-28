@@ -35,8 +35,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${figtree.variable} ${inter.variable} ${shantellSans.variable} antialiased`}
+        className={`${figtree.variable} ${inter.variable} ${shantellSans.variable} antialiased relative isolate`}
       >
+        <div
+          className="fixed inset-0 -z-10 bg-cover bg-center opacity-60 pointer-events-none"
+          style={{ backgroundImage: "url('/og.png')" }}
+          aria-hidden="true"
+        />
+        <div className="fixed inset-0 -z-10 bg-[var(--canvas)]/35 pointer-events-none" aria-hidden="true" />
+
         {children}
       </body>
     </html>

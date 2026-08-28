@@ -1,12 +1,12 @@
 type NavProps = {
-  current: "home" | "about" | "projects" | "research" | "leadership";
+  current: "home" | "about" | "experience" | "projects" | "leadership";
 };
 
 const links: { href: string; label: string; key: NavProps["current"] }[] = [
   { href: "/", label: "Home", key: "home" },
   { href: "/about", label: "About", key: "about" },
-  { href: "/projects", label: "Projects", key: "projects" },
-  { href: "/research", label: "Research", key: "research" },
+  { href: "/#experience", label: "Experience", key: "experience" },
+  { href: "/#projects", label: "Projects", key: "projects" },
   { href: "/leadership", label: "Leadership", key: "leadership" },
 ];
 
